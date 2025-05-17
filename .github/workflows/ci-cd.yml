@@ -1,15 +1,15 @@
-name: Node.js CI + Deploy to Railway
+# .github/workflows/ci.yml
+name: CI for Node.js
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout source code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -22,12 +22,3 @@ jobs:
 
       - name: Run tests
         run: npm test
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Railway Deployment
-        uses: jwalton/gh-action-railway@v2
-        with:
-          railwayToken: ${{ secrets.RAILWAY_TOKEN }}
