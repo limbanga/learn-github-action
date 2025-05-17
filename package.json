@@ -1,0 +1,12 @@
+{
+  "name": "my-node-app",
+  "version": "1.0.0",
+  "description": "Example Node.js app with GitHub CI/CD",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node test.js"
+  },
+  "author": "Liêm",
+  "license": "MIT"
+}
